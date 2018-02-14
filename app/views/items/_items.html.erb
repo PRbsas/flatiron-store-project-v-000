@@ -1,0 +1,6 @@
+<% @items.each do |item| %>
+  <p><%= item.title %> | <%= "$#{item.price.to_f/100}" %></p>
+  <% if current_user %>
+    <p><%= button_to 'Add to Cart', line_items_path(item_id: item) %></p>
+  <% end %>
+<% end %>
